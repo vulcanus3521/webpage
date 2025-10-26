@@ -1,38 +1,126 @@
-*{
-    padding: 0%;
-    margin: 0%;
-}
+    *{
+        padding: 0%;
+        margin: 0%;
+        
+    }
 
-.menu_area {
-    width: 80%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    flex-direction: column;
-    align-items: center;
-}
-header{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-    padding: 0.5rem;
-}
-header>p{
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-header>ul{
-    display: flex;
-}
-header>ul>li{
-    list-style-type: none;
-    margin-left: 2rem;
-}
-header>ul>li>a{
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 800;
-}
-header>ul>li>a:hover{
-    border-bottom: 5px solid gray;
-}
+    .menu-color{
+        background-color: #199C6E;
+    }
+    .menu_area {
+        
+        width: 80%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        padding: 0.5rem;
+    }
+    header>p{
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    header>ul{
+        display: flex;
+    }
+    header>ul>li{
+        list-style-type: none;
+        margin-left: 2rem;
+    }
+    header>ul>li>a{
+        color: black;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+    header>ul>li>a:hover{
+        border-bottom: 5px solid gray;
+    }
+    @media screen and (max-width:1000px) {
+        header{
+            flex-direction: column;
+        }
+    }
+
+    .creator-area{
+        padding: 0 3rem;
+        text-align: center;
+    }
+    .creator-area>p{
+        color: black;
+        margin-bottom: 1rem;
+    }
+    .creator-area>p:first-child{
+        font-weight: 500;
+    }
+
+    .creator-intro{
+        padding: 0 3rem;
+        text-align: center;
+    }
+    .creator-intro>p{
+        margin-bottom: 2rem;
+    }
+    .creator-intro>p:first-child{
+        font-size: 2rem;
+        font-weight: 900;
+    }
+    .creator-intro>p:last-of-type{
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+    .creator-intro>a{
+        display: block;
+        border: 1px solid black;
+        width: 150px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: auto;
+        padding: 1rem;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+    .creator-slide input[id*="slide"] {display:none;}
+	.creator-slide .slidewrap {max-width:240px;margin:0 auto;}
+	.creator-slide .slidelist {white-space:nowrap;font-size:0;overflow:hidden;position:relative;}
+	.creator-slide .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+	.creator-slide .slidelist > li > a {display:block;position:relative;}
+	.creator-slide .slidelist > li > a img {width:100%;}
+	.creator-slide .slidelist label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+	
+	/* input에 체크되면 슬라이드 효과 */
+	.creator-slide input[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+	.creator-slide input[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+	.creator-slide input[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+    .creator-slide input[id="slide04"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-300%);}
+	.creator-slide input[id="slide05"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-400%);}
+	.creator-slide input[id="slide06"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-500%);}
+
+	/* 좌,우 슬라이드 버튼 */
+	.slide-control > div {display:none;}
+	.creator-slide .left {left:-40px;background:url('../images/left.png') center center / 20% no-repeat;}
+	.creator-slide .right {right:-40px;background:url('../images/right.png') center center / 20% no-repeat;}
+	.creator-slide input[id="slide01"]:checked ~ .slidewrap .slide-control > div:nth-child(1) {display:block;}
+	.creator-slide input[id="slide02"]:checked ~ .slidewrap .slide-control > div:nth-child(2) {display:block;}
+	.creator-slide input[id="slide03"]:checked ~ .slidewrap .slide-control > div:nth-child(3) {display:block;}
+    .creator-slide input[id="slide04"]:checked ~ .slidewrap .slide-control > div:nth-child(4) {display:block;}
+	.creator-slide input[id="slide05"]:checked ~ .slidewrap .slide-control > div:nth-child(5) {display:block;}
+	.creator-slide input[id="slide06"]:checked ~ .slidewrap .slide-control > div:nth-child(6) {display:block;}
+
+	/* 페이징 */
+	.slide-pagelist {text-align:center;padding:5px;}
+	.slide-pagelist > li {display:inline-block;vertical-align:middle;}
+	.slide-pagelist > li > label {display:block;padding:2px 7.5px;border-radius:7.5px;background:#ccc;margin:5px 1.5px;cursor:pointer;}
+	.creator-slide input[id="slide01"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(1) > label {background:#999;}
+	.creator-slide input[id="slide02"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(2) > label {background:#999;}
+	.creator-slide input[id="slide03"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(3) > label {background:#999;}
+    .creator-slide input[id="slide04"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(4) > label {background:#999;}
+	.creator-slide input[id="slide05"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(5) > label {background:#999;}
+	.creator-slide input[id="slide06"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(6) > label {background:#999;}
